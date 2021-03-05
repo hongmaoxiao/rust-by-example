@@ -57,6 +57,13 @@ fn main() {
     Color { red: 0, green: 0, blue: 0 },
   ].iter() {
     println!("{:?}", *color);
+  }
+
+  for color in [
+    Color { red: 128, green: 255, blue: 90 },
+    Color { red: 0, green: 3, blue: 254 },
+    Color { red: 0, green: 0, blue: 0 },
+  ].iter() {
     println!("{}", *color);
   }
 }
