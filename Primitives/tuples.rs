@@ -10,18 +10,15 @@ fn reverse(pair: (i32, bool)) -> (bool, i32) {
 
 // Tuples can be used as function arguments and as return values
 fn reverseMatrix(pair: (f32, f32)) -> (f32, f32) {
-  // `let` can be used to bind the members of a tuple to variables
   let (f1, f2) = pair;
 
   (f2, f1)
 }
 
-fn transpose(matrix: &mut Matrix) -> &mut Matrix {
-  let res = reverseMatrix((matrix.1, matrix.2));
-  println!("change: {:?}", res);
-  matrix.1 = res.0;
-  matrix.2 = res.1;
-  matrix
+fn transpose(matrix: Matrix) -> Matrix {
+  let (a, b) = reverseMatrix((matrix.1, matrix.2));
+  
+  Matrix(matrix.0, a, b, matrix.3)
 }
 
 // The following struct is for the activity.
@@ -75,5 +72,6 @@ fn main() {
   println!("{:?}", matrix);
   println!("{}", matrix);
 
-  // println!("{}", transpose(matrix));
+  println!("Matrix:\n{}", matrix);
+  println!("Transpose:\n{}", transpose(matrix));
 }
