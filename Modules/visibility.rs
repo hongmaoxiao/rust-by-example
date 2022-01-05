@@ -61,7 +61,7 @@ mod my_mod {
   }
 
   // Nested modules follow the same rules for visibility
-  mod private_nested() {
+  mod private_nested {
     #[allow(dead_code)]
     pub fn function() {
       println!("called `my_mod::private_nested::function()`");
